@@ -1,14 +1,15 @@
 package datamanagement;
-import java.awt.Color;
-import java.awt.Font;
-
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class cgUI extends javax.swing.JFrame implements IUnitLister,
-	IStudentLister {
+		IStudentLister {
 	private cgCTL ctl;
 	private javax.swing.DefaultComboBoxModel uM;
 	private javax.swing.DefaultComboBoxModel rM;
@@ -16,9 +17,10 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	float f2;
 	float f3;
 	Integer sid;
-	
+
 	public cgUI(cgCTL ctl) {
 		this.ctl = ctl;
+		
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		initComponents();
@@ -52,15 +54,18 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jPanel4 = new javax.swing.JPanel();
 		jLabel5 = new javax.swing.JLabel();
 		
-		jPanel1.setBackground(Color.gray);
-		jPanel2.setBackground(Color.GRAY);
-		jPanel3.setBackground(Color.gray);
-		jPanel4.setBackground(Color.GRAY);
+		jPanel1.setBackground(Color.CYAN);
+		jPanel2.setBackground(Color.CYAN);
+		jPanel3.setBackground(Color.CYAN);
+		jPanel4.setBackground(Color.CYAN);
+		
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setTitle("Check Grade UI");
+		getContentPane().setBackground(Color.CYAN);
 
 		jLabel1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-		jLabel1.setText("Check Student Grade UI");
+		jLabel1.setText("Check Grade UI");
 
 		jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Unit"));
 
@@ -71,17 +76,32 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 			}
 		});
 
-		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(
+				jPanel1);
 		jPanel1.setLayout(jPanel1Layout);
 		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(
 				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-				jPanel1Layout.createSequentialGroup().addContainerGap().addComponent(jComboBox1,javax.swing.GroupLayout.PREFERRED_SIZE, 185,
-			    javax.swing.GroupLayout.PREFERRED_SIZE).addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,Short.MAX_VALUE)));
-				jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel1Layout
-				.createSequentialGroup().addComponent(jComboBox1,javax.swing.GroupLayout.PREFERRED_SIZE,javax.swing.GroupLayout.DEFAULT_SIZE,
-				javax.swing.GroupLayout.PREFERRED_SIZE).addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,Short.MAX_VALUE)));
+				jPanel1Layout
+						.createSequentialGroup()
+						.addContainerGap()
+						.addComponent(jComboBox1,
+								javax.swing.GroupLayout.PREFERRED_SIZE, 185,
+								javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)));
+		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(
+				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
+				jPanel1Layout
+						.createSequentialGroup()
+						.addComponent(jComboBox1,
+								javax.swing.GroupLayout.PREFERRED_SIZE,
+								javax.swing.GroupLayout.DEFAULT_SIZE,
+								javax.swing.GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)));
 
-		jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Student"));
+		jPanel2.setBorder(javax.swing.BorderFactory
+				.createTitledBorder("Student"));
 
 		jComboBox2.setModel(rM);
 		jComboBox2.addItemListener(new java.awt.event.ItemListener() {
@@ -90,10 +110,15 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 			}
 		});
 
-		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(
+				jPanel2);
 		jPanel2.setLayout(jPanel2Layout);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(jPanel2Layout
-						.createSequentialGroup().addContainerGap().addComponent(jComboBox2,
+		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(
+				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
+				jPanel2Layout
+						.createSequentialGroup()
+						.addContainerGap()
+						.addComponent(jComboBox2,
 								javax.swing.GroupLayout.PREFERRED_SIZE, 185,
 								javax.swing.GroupLayout.PREFERRED_SIZE)
 						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
@@ -283,7 +308,6 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 					.addContainerGap())
 		);
 		getContentPane().setLayout(layout);
-		
 
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
