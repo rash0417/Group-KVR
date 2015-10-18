@@ -20,6 +20,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 
 	public cgUI(cgCTL ctl) {
 		this.ctl = ctl;
+		
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		initComponents();
@@ -52,10 +53,18 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jButton1 = new javax.swing.JButton();
 		jPanel4 = new javax.swing.JPanel();
 		jLabel5 = new javax.swing.JLabel();
+		
+		jPanel1.setBackground(Color.CYAN);
+		jPanel2.setBackground(Color.CYAN);
+		jPanel3.setBackground(Color.CYAN);
+		jPanel4.setBackground(Color.CYAN);
+		
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setTitle("Check Grade UI");
+		getContentPane().setBackground(Color.CYAN);
 
-		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+		jLabel1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
 		jLabel1.setText("Check Grade UI");
 
 		jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Unit"));
@@ -133,21 +142,21 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 
 		jLabel4.setText("Exam:");
 
-		jTextField1.setEditable(false);
+		jTextField1.setEditable(true);
 		jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				jTextFieldKeyTyped(evt);
 			}
 		});
 
-		jTextField2.setEditable(false);
+		jTextField2.setEditable(true);
 		jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				jTextFieldKeyTyped(evt);
 			}
 		});
 
-		jTextField3.setEditable(false);
+		jTextField3.setEditable(true);
 		jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				jTextFieldKeyTyped(evt);
@@ -155,12 +164,14 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		});
 
 		jButton1.setText("Change");
+		jButton1.setVisible(false);
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 			}
 		});
 		jButton2 = new javax.swing.JButton();
+		jButton2.setVisible(false);
 		
 				jButton2.setText("Check Grade");
 				jButton2.setActionCommand("checkGrade");
@@ -241,12 +252,13 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jlabel6.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		jButton3 = new javax.swing.JButton();
 		
-				jButton3.setText("Save");
-				jButton3.addActionListener(new java.awt.event.ActionListener() {
-					public void actionPerformed(java.awt.event.ActionEvent evt) {
-						jButton2ActionPerformed(evt);
-					}
-				});
+		jButton3.setText("Save");
+		jButton3.setVisible(false);
+		jButton3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton2ActionPerformed(evt);
+			}
+		});
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
@@ -349,6 +361,8 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	private void jTextFieldKeyTyped(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_jTextField1KeyTyped
 		jLabel5.setText("");
 		jlabel6.setText("");
+		jButton3ActionPerformed(null);
+		
 	}// GEN-LAST:event_jTextField1KeyTyped
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
@@ -408,9 +422,9 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jTextField3.setText("");
 		jLabel5.setText("");
 		jlabel6.setText("");
-		jTextField1.setEditable(false);
-		jTextField2.setEditable(false);
-		jTextField3.setEditable(false);
+//		jTextField1.setEditable(false);
+//		jTextField2.setEditable(false);
+//		jTextField3.setEditable(false);
 	}
 
 	public void setState3(boolean b) {
@@ -423,9 +437,9 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	}
 
 	public void setState5(boolean b) {
-		jTextField1.setEditable(b);
-		jTextField2.setEditable(b);
-		jTextField3.setEditable(b);
+//		jTextField1.setEditable(b);
+//		jTextField2.setEditable(b);
+//		jTextField3.setEditable(b);
 	}
 
 	public void setState6(boolean b) {
