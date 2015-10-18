@@ -2,7 +2,7 @@ package datamanagement;
 
 public class cgCTL {
 
-	cgUI CGUI;
+	cgUI1_1 CGUI;
 	String cuc = null;
 	Integer currentStudentID = null;
 	boolean changed = false;
@@ -11,7 +11,7 @@ public class cgCTL {
 	}
 
 	public void execute() {
-		CGUI = new cgUI(this);
+		CGUI = new cgUI1_1(this);
 		CGUI.setState1(false);
 
 		CGUI.setState2(false);
